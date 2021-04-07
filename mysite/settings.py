@@ -113,10 +113,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+DEBUG = True # required for css linking at the moment.and
+# when in production we must figure out another way to link css file
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static/'),
+)
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
